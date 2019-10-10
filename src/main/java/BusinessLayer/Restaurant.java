@@ -100,12 +100,12 @@ public class Restaurant extends Observable implements IRestaurantProcessing {
     }
 
     /**
-     * Adauga un menuItem in lista de produse
+     * It inserts a menuItem in the products list
      * @pre isWellFormed()
      * @pre i >= 0 && newName != null && newPrice > 0
-     * @param i indicele produsului care trebuie modificat
-     * @param newName noul nume al produsului
-     * @param newPrice noul pret al produsului
+     * @param i the index of the item that must be edited
+     * @param newName the new name of the product
+     * @param newPrice the new price of the product
      * @post isWellFormed()
      */
     @Override
@@ -125,8 +125,8 @@ public class Restaurant extends Observable implements IRestaurantProcessing {
      * @post ordersList.getSize() == ordersList()@pre + 1
      * @post orders.getSize() == orders()@pre + 1
      * @post isWellFormed()
-     * @param order noua comanda
-     * @param items lista de produse de la noua comanda
+     * @param order the new order
+     * @param items the products list from the new order
      */
     @Override
     public void createOrder(Order order, ArrayList<MenuItem> items) {
@@ -141,7 +141,7 @@ public class Restaurant extends Observable implements IRestaurantProcessing {
 
     /**
      * @pre i > 0
-     * @param i indexul comenzii pentru care se calculeaza pretul
+     * @param i the index of the product for which the price is calculated
      */
     @Override
     public double computePriceForOrder(int i) {
@@ -157,7 +157,7 @@ public class Restaurant extends Observable implements IRestaurantProcessing {
     /**
      * @pre ordersList.containsId(index)
      * @post @noChange
-     * @param index indexul comenzii pentru care se face factura
+     * @param index the index for the product for which the order is created
      */
     @Override
     public void generateBill(int index) {
